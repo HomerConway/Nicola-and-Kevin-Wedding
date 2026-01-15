@@ -1,1 +1,143 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicola & Kevin | The Big Day</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #c5a059;
+            --dark: #2c2c2c;
+            --light: #f9f9f9;
+            --white: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+        }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
+                        url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80'); /* Placeholder image */
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .hero-names { font-size: 4rem; margin-bottom: 0.5rem; }
+        .hero-date { font-size: 1.5rem; letter-spacing: 3px; text-transform: uppercase; }
+
+        /* Sections */
+        section { padding: 100px 20px; text-align: center; max-width: 900px; margin: 0 auto; }
+        
+        .accent-line {
+            width: 50px;
+            height: 2px;
+            background: var(--gold);
+            margin: 20px auto;
+        }
+
+        /* Details Cards */
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .card {
+            padding: 30px;
+            border: 1px solid #eee;
+            transition: 0.3s;
+        }
+
+        .card:hover { border-color: var(--gold); }
+
+        /* RSVP Button */
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--dark);
+            color: white;
+            text-decoration: none;
+            border-radius: 0;
+            margin-top: 30px;
+            transition: 0.3s;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover { background: var(--gold); }
+
+        footer { padding: 50px; background: var(--light); font-style: italic; }
+
+        @media (max-width: 768px) {
+            .details-grid { grid-template-columns: 1fr; }
+            .hero-names { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="hero-date">Save The Date</div>
+        <h1 class="hero-names">Nicola & Kevin</h1>
+        <div class="hero-date">08 . 05 . 2026</div>
+    </header>
+
+    <section id="story">
+        <h2>We're Getting Married!</h2>
+        <div class="accent-line"></div>
+        <p>After many wonderful years together, Nicola Walshe and Kevin Conway <br>invite you to join them in celebrating their wedding day.</p>
+    </section>
+
+    <section id="details" style="background-color: var(--light); max-width: 100%;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2>The Day</h2>
+            <div class="details-grid">
+                <div class="card">
+                    <h3>The Ceremony</h3>
+                    <p><strong>1:00 PM</strong><br>
+                    St Andrews Church<br>
+                    Bagenalstown, Co. Carlow</p>
+                </div>
+                <div class="card">
+                    <h3>The Celebration</h3>
+                    <p><strong>Reception to Follow</strong><br>
+                    Hotel Kilkenny<br>
+                    Kilkenny City</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="rsvp">
+        <h2>RSVP</h2>
+        <div class="accent-line"></div>
+        <p>Please let us know if you can make it by April 1st.</p>
+        <a href="mailto:your@email.com" class="btn">SEND AN EMAIL</a>
+        <p style="margin-top: 40px; font-size: 0.9rem; color: #888;">#NicolaAndKevin2026</p>
+    </section>
+
+    <footer style="text-align: center;">
+        <p>Can't wait to see you there!</p>
+    </footer>
+
+</body>
+</html>
