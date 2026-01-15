@@ -3,140 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nicola & Kevin | The Big Day</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <title>Nicola & Kevin | 08.05.2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --gold: #c5a059;
-            --dark: #2c2c2c;
-            --light: #f9f9f9;
+            --gold: #b39151;
+            --dark: #1a1a1a;
+            --off-white: #fcfbf7;
             --white: #ffffff;
         }
 
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            color: var(--dark);
-            background-color: var(--white);
-            line-height: 1.6;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 400;
-        }
-
-        /* Hero Section */
-        header {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
-                        url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80'); /* Placeholder image */
-            background-size: cover;
-            background-position: center;
-            color: white;
-        }
-
-        .hero-names { font-size: 4rem; margin-bottom: 0.5rem; }
-        .hero-date { font-size: 1.5rem; letter-spacing: 3px; text-transform: uppercase; }
-
-        /* Sections */
-        section { padding: 100px 20px; text-align: center; max-width: 900px; margin: 0 auto; }
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: 'Inter', sans-serif; color: var(--dark); background-color: var(--white); scroll-behavior: smooth; }
         
-        .accent-line {
-            width: 50px;
-            height: 2px;
-            background: var(--gold);
-            margin: 20px auto;
+        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 400; margin-bottom: 20px; }
+
+        /* Navigation */
+        nav {
+            position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.95);
+            padding: 15px; z-index: 1000; border-bottom: 1px solid #eee; text-align: center;
         }
+        nav a { margin: 0 15px; text-decoration: none; color: var(--dark); font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; }
 
-        /* Details Cards */
-        .details-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 50px;
+        /* Hero */
+        header {
+            height: 100vh; display: flex; flex-direction: column; justify-content: center;
+            align-items: center; text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover; background-position: center; color: white;
         }
+        .hero-names { font-size: clamp(2.5rem, 8vw, 5rem); margin: 10px 0; }
 
-        .card {
-            padding: 30px;
-            border: 1px solid #eee;
-            transition: 0.3s;
-        }
+        section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; text-align: center; }
+        .bg-alt { background-color: var(--off-white); max-width: 100%; }
+        
+        .accent { width: 40px; height: 1px; background: var(--gold); margin: 20px auto; }
 
-        .card:hover { border-color: var(--gold); }
+        /* Timeline / Order of Events */
+        .timeline { margin: 40px auto; max-width: 600px; text-align: left; }
+        .event { display: flex; margin-bottom: 20px; border-left: 1px solid var(--gold); padding-left: 20px; }
+        .time { min-width: 80px; font-weight: 600; color: var(--gold); }
 
-        /* RSVP Button */
+        /* Maps & Cards */
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
+        .map-container iframe { width: 100%; height: 250px; border: 0; filter: grayscale(100%); transition: 0.5s; }
+        .map-container iframe:hover { filter: grayscale(0%); }
+        
+        .card { background: white; padding: 30px; border: 1px solid #f0f0f0; }
+
         .btn {
-            display: inline-block;
-            padding: 15px 40px;
-            background: var(--dark);
-            color: white;
-            text-decoration: none;
-            border-radius: 0;
-            margin-top: 30px;
-            transition: 0.3s;
-            letter-spacing: 1px;
+            display: inline-block; padding: 16px 40px; background: var(--dark); color: white;
+            text-decoration: none; margin-top: 20px; letter-spacing: 2px; font-size: 0.8rem;
         }
 
-        .btn:hover { background: var(--gold); }
-
-        footer { padding: 50px; background: var(--light); font-style: italic; }
-
-        @media (max-width: 768px) {
-            .details-grid { grid-template-columns: 1fr; }
-            .hero-names { font-size: 2.5rem; }
-        }
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } nav { display: none; } }
     </style>
 </head>
 <body>
 
+    <nav>
+        <a href="#schedule">Schedule</a>
+        <a href="#locations">Locations</a>
+        <a href="#daytwo">Day Two</a>
+        <a href="#taxis">Taxis</a>
+    </nav>
+
     <header>
-        <div class="hero-date">Save The Date</div>
+        <div style="letter-spacing: 4px; text-transform: uppercase;">We're Getting Married</div>
         <h1 class="hero-names">Nicola & Kevin</h1>
-        <div class="hero-date">08 . 05 . 2026</div>
+        <div style="font-size: 1.2rem;">8th May 2026 • Kilkenny</div>
     </header>
 
-    <section id="story">
-        <h2>We're Getting Married!</h2>
-        <div class="accent-line"></div>
-        <p>After many wonderful years together, Nicola Walshe and Kevin Conway <br>invite you to join them in celebrating their wedding day.</p>
+    <section id="schedule">
+        <h2>Order of Events</h2>
+        <div class="accent"></div>
+        <div class="timeline">
+            <div class="event"><div class="time">1:00 PM</div><div><strong>Wedding Ceremony</strong><br>St Andrews Church, Bagenalstown</div></div>
+            <div class="event"><div class="time">3:00 PM</div><div><strong>Drinks Reception</strong><br>Hotel Kilkenny Gardens</div></div>
+            <div class="event"><div class="time">5:00 PM</div><div><strong>Dinner & Speeches</strong><br>The Skyline Suite, Hotel Kilkenny</div></div>
+            <div class="event"><div class="time">9:00 PM</div><div><strong>Dancing & Music</strong><br>Until late!</div></div>
+        </div>
     </section>
 
-    <section id="details" style="background-color: var(--light); max-width: 100%;">
-        <div style="max-width: 900px; margin: 0 auto;">
-            <h2>The Day</h2>
-            <div class="details-grid">
-                <div class="card">
-                    <h3>The Ceremony</h3>
-                    <p><strong>1:00 PM</strong><br>
-                    St Andrews Church<br>
-                    Bagenalstown, Co. Carlow</p>
+    <section id="locations" class="bg-alt">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <h2>The Locations</h2>
+            <div class="grid">
+                <div class="map-container">
+                    <h3>The Church</h3>
+                    <p>St Andrews Church, Bagenalstown</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2402.668744155189!2d-6.9745582!3d52.7018889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d41935e236573%3A0x6d859424619d80d!2sSt.%20Andrew's%20Catholic%20Church!5e0!3m2!1sen!2sie!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
                 </div>
-                <div class="card">
-                    <h3>The Celebration</h3>
-                    <p><strong>Reception to Follow</strong><br>
-                    Hotel Kilkenny<br>
-                    Kilkenny City</p>
+                <div class="map-container">
+                    <h3>The Hotel</h3>
+                    <p>Hotel Kilkenny, Kilkenny City</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2409.8454559281734!2d-7.2655385!3d52.6457335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d309995555555%3A0x1d7c3577d62058e5!2sHotel%20Kilkenny!5e0!3m2!1sen!2sie!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="rsvp">
-        <h2>RSVP</h2>
-        <div class="accent-line"></div>
-        <p>Please let us know if you can make it by April 1st.</p>
-        <a href="mailto:your@email.com" class="btn">SEND AN EMAIL</a>
-        <p style="margin-top: 40px; font-size: 0.9rem; color: #888;">#NicolaAndKevin2026</p>
+    <section id="daytwo">
+        <h3 style="text-transform: uppercase; letter-spacing: 2px; color: var(--gold);">The Next Day</h3>
+        <h2>The After Party</h2>
+        <div class="accent"></div>
+        <p>The celebrations continue on <strong>Saturday, May 9th</strong>.</p>
+        <div class="card" style="display: inline-block; margin-top: 20px;">
+            <h3>Matt the Millers</h3>
+            <p><strong>Loft Bar • 4:00 PM</strong></p>
+            <p>Join us for music, finger food, and a chance to relive the night before.<br>Located in the heart of Kilkenny City.</p>
+        </div>
     </section>
 
-    <footer style="text-align: center;">
-        <p>Can't wait to see you there!</p>
+    <section id="taxis" class="bg-alt">
+        <h2>Local Taxis</h2>
+        <div class="accent"></div>
+        <p>We recommend booking your transport in advance.</p>
+        <div class="grid" style="max-width: 600px; margin: 0 auto;">
+            <div class="card">
+                <strong>Seven Sevens</strong><br>
+                <a href="tel:0567777777" style="color: var(--gold); text-decoration: none;">(056) 777 7777</a>
+            </div>
+            <div class="card">
+                <strong>Kilkenny Taxis</strong><br>
+                <a href="tel:0567712345" style="color: var(--gold); text-decoration: none;">(056) 771 2345</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="rsvp">
+        <h2>We Can't Wait</h2>
+        <p>Nicola & Kevin</p>
+        <a href="mailto:nicolaandkevin@example.com" class="btn">RSVP VIA EMAIL</a>
+    </section>
+
+    <footer style="padding: 40px; font-size: 0.8rem; letter-spacing: 1px; color: #999;">
+        &copy; 2026 NICOLA & KEVIN
     </footer>
 
 </body>
