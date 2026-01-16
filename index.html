@@ -25,12 +25,11 @@
             width: 80vw; height: 80vw;
             max-width: 600px; max-height: 600px;
             transform: translate(-50%, -50%);
-            /* Using the uploaded monogram image */
             background-image: url('image_4a7b8a.png'); 
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            opacity: 0.08; /* Subtle watermark effect */
+            opacity: 0.08; 
             z-index: -1;
             pointer-events: none;
         }
@@ -40,10 +39,11 @@
         nav { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.98); padding: 15px; z-index: 1000; border-bottom: 1px solid #eee; text-align: center; }
         nav a { margin: 0 12px; text-decoration: none; color: var(--dark); font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; }
 
+        /* Main Hero Image - Updated with the couple photo */
         header {
             height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-                        url('https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1920&q=80');
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
+                        url('image_generation_content/0.png');
             background-size: cover; background-position: center; color: white;
         }
         .hero-names { font-size: clamp(2.5rem, 8vw, 5rem); margin: 10px 0; }
@@ -109,12 +109,12 @@
             <div class="map-box">
                 <h3>St Andrews Church</h3>
                 <p>Market Square, Bagenalstown, Co. Carlow</p>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2402.484501235658!2d-6.960416923485885!3d52.70054772213793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d45a7cc3e375d%3A0xc3c55d015df66214!2sSt%20Andrew's%20Church!5e0!3m2!1sen!2sie!4v1705437150000!5m2!1sen!2sie"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2402.046461998522!2d-6.974914023249117!3d52.70119842240907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d45a7cc3db45d%3A0x5ac577605d766211!2sSt.%20Andrew's%20Catholic%20Church!5e0!3m2!1sen!2sie!4v1700000000000!5m2!1sen!2sie"></iframe>
             </div>
             <div class="map-box">
                 <h3>Hotel Kilkenny</h3>
                 <p>College Rd, Kilkenny City</p>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2405.651478164391!2d-7.265744023489815!3d52.64654522639014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d3084d8a17d67%3A0x4d512cad4c3ddecd!2sHotel%20Kilkenny!5e0!3m2!1sen!2sie!4v1705437200000!5m2!1sen!2sie"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2405.340059530402!2d-7.262593623252516!3d52.64506292683109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d3080d8836d67%3A0x3d51ade44c3ddecd!2sHotel%20Kilkenny!5e0!3m2!1sen!2sie!4v1700000000001!5m2!1sen!2sie"></iframe>
             </div>
         </div>
     </section>
@@ -124,7 +124,7 @@
         <p>Saturday May 9th @ 4:00 PM • Matt The Millers Loft Bar</p>
         <p>Live music with <strong>Jake Doyle</strong> & finger food.</p>
         <div class="accent"></div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2405.340082695504!2d-7.252631723489439!3d52.65219212597193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d3090041d8a39%3A0xb33e506644485303!2sMatt%20The%20Millers%20Bar%20%26%20Restaurant!5e0!3m2!1sen!2sie!4v1705437250000!5m2!1sen!2sie" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2405.074697395027!2d-7.251457123252277!3d52.65004122647464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d3099955e69e7%3A0x608e5616f731765c!2sMatt%20The%20Millers%20Bar%20%26%20Restaurant!5e0!3m2!1sen!2sie!4v1700000000002!5m2!1sen!2sie" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </section>
 
     <section id="transport" class="bg-alt">
