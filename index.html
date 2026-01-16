@@ -15,12 +15,8 @@
         * { box-sizing: border-box; }
         
         body { 
-            margin: 0; 
-            font-family: 'Inter', sans-serif; 
-            color: var(--dark); 
-            scroll-behavior: smooth;
-            position: relative;
-            background-color: var(--teal-bg);
+            margin: 0; font-family: 'Inter', sans-serif; color: var(--dark); 
+            scroll-behavior: smooth; position: relative; background-color: var(--teal-bg);
         }
 
         /* Custom Monogram Watermark */
@@ -33,14 +29,13 @@
         }
 
         h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 400; margin-bottom: 20px; }
-        
         nav { position: fixed; top: 0; width: 100%; background: var(--white-glass); padding: 15px; z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.05); text-align: center; }
         nav a { margin: 0 12px; text-decoration: none; color: var(--dark); font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; }
 
         header {
             height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
             background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), 
-                        url('https://images.unsplash.com/photo-1510076857177-7470076d4098?auto=format&fit=crop&w=1920&q=80');
+                        url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80');
             background-size: cover; background-position: center; color: white;
         }
         .hero-names { font-size: clamp(2.5rem, 8vw, 5rem); margin: 10px 0; }
@@ -55,11 +50,10 @@
 
         .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
         .card { background: white; padding: 25px; border: 1px solid rgba(0,0,0,0.05); border-radius: 4px; }
-        .card img { width: 100%; height: 220px; object-fit: cover; border-radius: 2px; margin-bottom: 15px; }
+        .card img { width: 100%; height: 250px; object-fit: cover; border-radius: 2px; margin-bottom: 15px; }
 
         .map-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 15px 0; }
-        .map-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; filter: grayscale(100%); transition: 0.5s; }
-        .map-container iframe:hover { filter: grayscale(0%); }
+        .map-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; filter: grayscale(100%); }
 
         .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; text-align: left; margin-top: 40px; }
         .faq-item h3 { font-size: 1.1rem; color: var(--gold); margin-bottom: 10px; }
@@ -69,8 +63,7 @@
         .form-group { margin-bottom: 20px; }
         label { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: 600; }
         input, textarea, select { width: 100%; padding: 12px; border: 1px solid #ddd; font-family: 'Inter', sans-serif; }
-        .btn-submit { width: 100%; background: var(--dark); color: white; border: none; padding: 15px; text-transform: uppercase; cursor: pointer; letter-spacing: 2px; transition: 0.3s; }
-        .btn-submit:hover { background: var(--gold); }
+        .btn-submit { width: 100%; background: var(--dark); color: white; border: none; padding: 15px; text-transform: uppercase; cursor: pointer; letter-spacing: 2px; }
 
         @media (max-width: 768px) { .card-grid, .faq-grid { grid-template-columns: 1fr; } nav { display: none; } }
     </style>
@@ -106,19 +99,19 @@
         <div class="accent"></div>
         <div class="card-grid">
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1542042161784-26ab9e040089?auto=format&fit=crop&w=800" alt="Catholic Wedding Symbolism">
+                <img src="https://images.unsplash.com/photo-1470116892389-0de5d9770b2c?auto=format&fit=crop&w=800" alt="Church Interior">
                 <h3>St Andrews Church</h3>
                 <p>Market Square, Bagenalstown, Co. Carlow</p>
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2411.362241517702!2d-6.967814423456722!3d52.701830572123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d452d3a98f12b%3A0xc3f7a4d6f8f7c9a4!2sSt%20Andrew's%20Church!5e0!3m2!1sen!2sie!4v1700000000000" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2402.4835695679545!2d-6.9610115!3d52.7032742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d1565a6c4c68b%3A0x7d028670b332b78!2sSt%20Andrew's%20Church%2C%20Bagenalstown!5e0!3m2!1sen!2sie!4v1700000000000" loading="lazy"></iframe>
                 </div>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800" alt="Hotel Kilkenny Dinner Suite">
+                <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800" alt="Hotel Kilkenny">
                 <h3>Hotel Kilkenny</h3>
                 <p>College Rd, Kilkenny City</p>
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2417.4362140455584!2d-7.265775523456722!3d52.646700572123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d309995555555%3A0x1111111111111111!2sHotel%20Kilkenny!5e0!3m2!1sen!2sie!4v1700000000000" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2406.840618015467!2d-7.2589574!3d52.643666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d30907409f5db%3A0xa63d2983794b150c!2sHotel%20Kilkenny!5e0!3m2!1sen!2sie!4v1700000000000" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
@@ -127,15 +120,13 @@
     <section id="daytwo">
         <h2>Day Two: Matt The Millers</h2>
         <div class="accent"></div>
-        <div class="card-grid" style="justify-content: center;">
-            <div class="card" style="max-width: 600px; margin: 0 auto;">
-                <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800" alt="Matt The Millers">
-                <h3>The Loft Bar</h3>
-                <p>Saturday May 9th @ 4:00 PM</p>
-                <p>Music by <strong>Jake Doyle</strong> & Finger Food</p>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2417.300000000000!2d-7.250000000000!3d52.650000000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d30a666666666%3A0x2222222222222222!2sMatt%20The%20Millers%20Bar%20%26%20Restaurant!5e0!3m2!1sen!2sie!4v1700000000000" loading="lazy"></iframe>
-                </div>
+        <div class="card" style="max-width: 600px; margin: 0 auto;">
+            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800" alt="Matt The Millers">
+            <h3>The Loft Bar</h3>
+            <p>Saturday May 9th @ 4:00 PM</p>
+            <p>Music by <strong>Jake Doyle</strong> & Finger Food</p>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2406.4429949646453!2d-7.2514125!3d52.6534571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d309831f50a2b%3A0xc3f173c333f00f0!2sMatt%20The%20Millers%20Bar%20%26%20Restaurant!5e0!3m2!1sen!2sie!4v1700000000000" loading="lazy"></iframe>
             </div>
         </div>
     </section>
@@ -146,38 +137,32 @@
         <div class="faq-grid">
             <div class="faq-item">
                 <h3>Accommodation</h3>
-                <p><strong>Hotel Kilkenny:</strong> Call 056 776 2000 and mention our wedding for guest rates.<br>
-                <strong>Other options:</strong> Hibernian Hotel, Kilkenny Ormonde, and city center B&Bs are within 10-15 mins walk.</p>
+                <p><strong>Hotel Kilkenny:</strong> 056 776 2000. Quote our wedding for rates.<br>
+                <strong>Others:</strong> Hibernian Hotel & Kilkenny Ormonde are nearby.</p>
             </div>
             <div class="faq-item">
                 <h3>Local Taxis</h3>
-                <p><strong>Seven Sevens:</strong> 056 777 7777<br>
-                <strong>Kilkenny Taxis:</strong> 056 771 2345<br>
-                <em>We recommend booking in advance for late-night returns.</em></p>
+                <p>Seven Sevens: 056 777 7777<br>Kilkenny Taxis: 056 771 2345</p>
             </div>
             <div class="faq-item">
                 <h3>Dress Code</h3>
-                <p>Formal attire. Suits and cocktail or floor-length dresses are encouraged.</p>
+                <p>Formal attire. Suits and cocktail or floor-length dresses encouraged.</p>
             </div>
             <div class="faq-item">
                 <h3>Parking</h3>
-                <p>Complimentary parking is available at Hotel Kilkenny. Church parking is available in the Market Square area of Bagenalstown.</p>
+                <p>Free parking at Hotel Kilkenny. Church parking available in Market Square area.</p>
             </div>
         </div>
     </section>
 
     <section id="rsvp">
         <h2>RSVP</h2>
-        <p>Kindly respond by April 1st, 2026</p>
         <div class="accent"></div>
         <div class="rsvp-form">
             <form action="#" method="POST">
                 <div class="form-group"><label>Guest Names</label><input type="text" name="name" required></div>
                 <div class="form-group"><label>Attending?</label>
-                    <select name="attendance">
-                        <option value="yes">Joyfully Accept</option>
-                        <option value="no">Regretfully Decline</option>
-                    </select>
+                    <select name="attendance"><option value="yes">Accept</option><option value="no">Decline</option></select>
                 </div>
                 <div class="form-group"><label>Dietary Preferences</label><textarea name="dietary" rows="3"></textarea></div>
                 <button type="submit" class="btn-submit">Submit Response</button>
