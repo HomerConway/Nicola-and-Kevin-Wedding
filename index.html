@@ -39,6 +39,12 @@
             background-size: cover; background-position: center; color: white;
         }
         .hero-names { font-size: clamp(2.5rem, 8vw, 5rem); margin: 10px 0; }
+        
+        /* Countdown Styles */
+        #countdown { display: flex; gap: 20px; margin-top: 20px; }
+        .count-item { display: flex; flex-direction: column; align-items: center; }
+        .count-num { font-size: 2rem; font-family: 'Playfair Display', serif; }
+        .count-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
 
         section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; text-align: center; }
         .bg-glass { background-color: rgba(255, 255, 255, 0.4); max-width: 100%; }
@@ -48,9 +54,16 @@
         .event { display: flex; margin-bottom: 25px; border-left: 1px solid var(--gold); padding-left: 25px; }
         .time { min-width: 110px; font-weight: 600; color: var(--gold); }
 
+        .btn-calendar { 
+            display: inline-block; background: var(--gold); color: white; text-decoration: none; 
+            padding: 12px 25px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; 
+            border-radius: 2px; margin-top: 20px; transition: 0.3s;
+        }
+        .btn-calendar:hover { background: var(--dark); }
+
         .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-        .card { background: white; padding: 25px; border: 1px solid rgba(0,0,0,0.05); border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
-        .card img { width: 100%; height: 250px; object-fit: cover; border-radius: 2px; margin-bottom: 15px; background: #f9f9f9; }
+        .card { background: white; padding: 25px; border: 1px solid rgba(0,0,0,0.05); border-radius: 4px; }
+        .card img { width: 100%; height: 250px; object-fit: cover; border-radius: 2px; margin-bottom: 15px; }
 
         .map-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 15px 0; }
         .map-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; filter: grayscale(100%); }
@@ -62,11 +75,11 @@
         .rsvp-form { max-width: 500px; margin: 40px auto; text-align: left; background: white; padding: 40px; border: 1px solid #eee; }
         .form-group { margin-bottom: 20px; }
         label { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: 600; }
-        input, textarea, select { width: 100%; padding: 12px; border: 1px solid #ddd; font-family: 'Inter', sans-serif; outline: none; }
+        input, textarea, select { width: 100%; padding: 12px; border: 1px solid #ddd; font-family: 'Inter', sans-serif; }
         .btn-submit { width: 100%; background: var(--dark); color: white; border: none; padding: 15px; text-transform: uppercase; cursor: pointer; letter-spacing: 2px; transition: 0.3s; }
         .btn-submit:hover { background: var(--gold); }
 
-        @media (max-width: 768px) { .card-grid, .faq-grid { grid-template-columns: 1fr; } nav { display: none; } }
+        @media (max-width: 768px) { .card-grid, .faq-grid { grid-template-columns: 1fr; } nav { display: none; } #countdown { gap: 10px; } }
     </style>
 </head>
 <body>
@@ -82,6 +95,13 @@
         <div style="letter-spacing: 5px; text-transform: uppercase; font-size: 0.8rem;">The Wedding of</div>
         <h1 class="hero-names">Nicola & Kevin</h1>
         <div style="font-size: 1.3rem; letter-spacing: 2px;">08 . 05 . 2026</div>
+        
+        <div id="countdown">
+            <div class="count-item"><span class="count-num" id="days">00</span><span class="count-label">Days</span></div>
+            <div class="count-item"><span class="count-num" id="hours">00</span><span class="count-label">Hrs</span></div>
+            <div class="count-item"><span class="count-num" id="mins">00</span><span class="count-label">Mins</span></div>
+            <div class="count-item"><span class="count-num" id="secs">00</span><span class="count-label">Secs</span></div>
+        </div>
     </header>
 
     <section id="schedule">
@@ -93,6 +113,7 @@
             <div class="event"><div class="time">6:00 PM</div><div><strong>Dinner</strong><br>The Skyline Suite</div></div>
             <div class="event"><div class="time">9:30 PM</div><div><strong>Evening Party</strong><br>Music by The Electrix</div></div>
         </div>
+        <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Nicola+%26+Kevin%27s+Wedding&dates=20260508T130000Z/20260509T010000Z&details=Ceremony+at+St.+Andrews+followed+by+reception+at+Hotel+Kilkenny&location=Bagenalstown,+Ireland" target="_blank" class="btn-calendar">Add to Google Calendar</a>
     </section>
 
     <section id="venues" class="bg-glass">
@@ -100,11 +121,11 @@
         <div class="accent"></div>
         <div class="card-grid">
             <div class="card">
-                <img src="data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='800' height='250' viewBox='0 0 800 250'%3e%3crect width='100%25' height='100%25' fill='%23e0f2f1'/%3e%3cpath d='M400 50 L350 120 L450 120 Z' fill='%23b39151'/%3e%3crect x='375' y='120' width='50' height='80' fill='%23b39151'/%3e%3ctext x='50%25' y='220' font-family='Playfair Display, serif' font-size='20' fill='%231a1a1a' text-anchor='middle'%3eSt Andrews Church%3c/text%3e%3c/svg%3e" alt="St Andrews Church">
+                <img src="https://images.pexels.com/photos/1151268/pexels-photo-1151268.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Stone Church Exterior">
                 <h3>St Andrews Church</h3>
                 <p>Market Square, Bagenalstown, Co. Carlow</p>
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2402.666324204558!2d-6.96645568417551!3d52.70104687984857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d46e30b6e1b71%3A0xe7a5064619d9b4b0!2sSt.%20Andrew's%20Church!5e0!3m2!1sen!2sie!4v1700000000000!5m2!1sen!2sie" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2402.1!2d-6.9!3d52.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDQyJzAwLjAiTiA2wrA1NCc0MC4wIlc!5e0!3m2!1sen!2sie!4v123456789" loading="lazy"></iframe>
                 </div>
             </div>
             <div class="card">
@@ -112,7 +133,7 @@
                 <h3>Hotel Kilkenny</h3>
                 <p>College Rd, Kilkenny City</p>
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2411.396956743128!2d-7.262524484181467!3d52.64571987983896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d309062326779%3A0xc47e3034934d6738!2sHotel%20Kilkenny!5e0!3m2!1sen!2sie!4v1700000000000!5m2!1sen!2sie" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2407.2!2d-7.2!3d52.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDM2JzAwLjAiTiA3wrAxMicwMC4wIlc!5e0!3m2!1sen!2sie!4v123456789" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
@@ -126,9 +147,6 @@
             <h3>The Loft Bar</h3>
             <p>Saturday May 9th @ 4:00 PM</p>
             <p>Music by <strong>Jake Doyle</strong> & Finger Food</p>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2411.1666617068223!2d-7.251919884181313!3d52.65171797984428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d309837905d47%3A0x8691f1a586d17e6e!2sMatt%20The%20Millers%20Bar%20%26%20Restaurant!5e0!3m2!1sen!2sie!4v1700000000000!5m2!1sen!2sie" loading="lazy"></iframe>
-            </div>
         </div>
     </section>
 
@@ -138,8 +156,8 @@
         <div class="faq-grid">
             <div class="faq-item">
                 <h3>Accommodation</h3>
-                <p><strong>Hotel Kilkenny:</strong> 056 776 2000. Quote our wedding for rates.<br>
-                <strong>Others:</strong> Hibernian Hotel & Kilkenny Ormonde are nearby city center options.</p>
+                <p><strong>Hotel Kilkenny:</strong> 056 776 2000. Mention our wedding.<br>
+                <strong>Others:</strong> Hibernian Hotel & Kilkenny Ormonde nearby.</p>
             </div>
             <div class="faq-item">
                 <h3>Local Taxis</h3>
@@ -147,11 +165,11 @@
             </div>
             <div class="faq-item">
                 <h3>Dress Code</h3>
-                <p>Formal attire. Suits and cocktail or floor-length dresses are encouraged.</p>
+                <p>Formal attire. Suits and cocktail or floor-length dresses encouraged.</p>
             </div>
             <div class="faq-item">
                 <h3>Parking</h3>
-                <p>Free parking is available at Hotel Kilkenny. Church parking is available in the Market Square area of Bagenalstown.</p>
+                <p>Free parking at Hotel Kilkenny. Church parking in Market Square.</p>
             </div>
         </div>
     </section>
@@ -179,5 +197,20 @@
         <p>NICOLA & KEVIN • 08.05.2026</p>
     </footer>
 
+    <script>
+        const weddingDate = new Date("May 8, 2026 13:00:00").getTime();
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("mins").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("secs").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("countdown").innerHTML = "TODAY IS THE DAY!";
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
