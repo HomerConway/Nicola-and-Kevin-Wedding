@@ -34,8 +34,8 @@
 
         header {
             height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), 
-                        url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80');
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=1920&q=80');
             background-size: cover; background-position: center; color: white;
         }
         .hero-names { font-size: clamp(2.5rem, 8vw, 5rem); margin: 10px 0; }
@@ -49,7 +49,7 @@
         .time { min-width: 110px; font-weight: 600; color: var(--gold); }
 
         .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-        .card { background: white; padding: 25px; border: 1px solid rgba(0,0,0,0.05); border-radius: 4px; }
+        .card { background: white; padding: 25px; border: 1px solid rgba(0,0,0,0.05); border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
         .card img { width: 100%; height: 250px; object-fit: cover; border-radius: 2px; margin-bottom: 15px; }
 
         .map-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 15px 0; }
@@ -62,8 +62,9 @@
         .rsvp-form { max-width: 500px; margin: 40px auto; text-align: left; background: white; padding: 40px; border: 1px solid #eee; }
         .form-group { margin-bottom: 20px; }
         label { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: 600; }
-        input, textarea, select { width: 100%; padding: 12px; border: 1px solid #ddd; font-family: 'Inter', sans-serif; }
-        .btn-submit { width: 100%; background: var(--dark); color: white; border: none; padding: 15px; text-transform: uppercase; cursor: pointer; letter-spacing: 2px; }
+        input, textarea, select { width: 100%; padding: 12px; border: 1px solid #ddd; font-family: 'Inter', sans-serif; outline: none; }
+        .btn-submit { width: 100%; background: var(--dark); color: white; border: none; padding: 15px; text-transform: uppercase; cursor: pointer; letter-spacing: 2px; transition: 0.3s; }
+        .btn-submit:hover { background: var(--gold); }
 
         @media (max-width: 768px) { .card-grid, .faq-grid { grid-template-columns: 1fr; } nav { display: none; } }
     </style>
@@ -78,9 +79,9 @@
     </nav>
 
     <header>
-        <div style="letter-spacing: 5px; text-transform: uppercase; font-size: 0.9rem;">The Wedding of</div>
+        <div style="letter-spacing: 5px; text-transform: uppercase; font-size: 0.8rem;">The Wedding of</div>
         <h1 class="hero-names">Nicola & Kevin</h1>
-        <div style="font-size: 1.3rem;">08 . 05 . 2026</div>
+        <div style="font-size: 1.3rem; letter-spacing: 2px;">08 . 05 . 2026</div>
     </header>
 
     <section id="schedule">
@@ -99,11 +100,11 @@
         <div class="accent"></div>
         <div class="card-grid">
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1470116892389-0de5d9770b2c?auto=format&fit=crop&w=800" alt="Church Interior">
+                <img src="https://images.unsplash.com/photo-1445346335535-685efb30f374?auto=format&fit=crop&w=800" alt="St Andrews Church Altar">
                 <h3>St Andrews Church</h3>
                 <p>Market Square, Bagenalstown, Co. Carlow</p>
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2402.4835695679545!2d-6.9610115!3d52.7032742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d1565a6c4c68b%3A0x7d028670b332b78!2sSt%20Andrew's%20Church%2C%20Bagenalstown!5e0!3m2!1sen!2sie!4v1700000000000" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2402.8360431327175!2d-6.9691375!3d52.7013889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d5bc7645f65eb%3A0xe74e76c72782e36!2sSt.%20Andrew's%20Church!5e0!3m2!1sen!2sie!4v1700000000000" loading="lazy"></iframe>
                 </div>
             </div>
             <div class="card">
@@ -111,7 +112,7 @@
                 <h3>Hotel Kilkenny</h3>
                 <p>College Rd, Kilkenny City</p>
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2406.840618015467!2d-7.2589574!3d52.643666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d30907409f5db%3A0xa63d2983794b150c!2sHotel%20Kilkenny!5e0!3m2!1sen!2sie!4v1700000000000" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2411.332305844432!2d-7.2625906!3d52.6465645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d3090680362eb%3A0x6b772c6328906965!2sHotel%20Kilkenny!5e0!3m2!1sen!2sie!4v1700000000000" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
@@ -126,7 +127,7 @@
             <p>Saturday May 9th @ 4:00 PM</p>
             <p>Music by <strong>Jake Doyle</strong> & Finger Food</p>
             <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2406.4429949646453!2d-7.2514125!3d52.6534571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d309831f50a2b%3A0xc3f173c333f00f0!2sMatt%20The%20Millers%20Bar%20%26%20Restaurant!5e0!3m2!1sen!2sie!4v1700000000000" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2411.2384742517866!2d-7.2514589!3d52.6534567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d3096053f3e69%3A0x4f4949586326090c!2sMatt%20The%20Millers%20Bar%20%26%20Restaurant!5e0!3m2!1sen!2sie!4v1700000000000" loading="lazy"></iframe>
             </div>
         </div>
     </section>
@@ -138,7 +139,7 @@
             <div class="faq-item">
                 <h3>Accommodation</h3>
                 <p><strong>Hotel Kilkenny:</strong> 056 776 2000. Quote our wedding for rates.<br>
-                <strong>Others:</strong> Hibernian Hotel & Kilkenny Ormonde are nearby.</p>
+                <strong>Others:</strong> Hibernian Hotel & Kilkenny Ormonde are nearby city center options.</p>
             </div>
             <div class="faq-item">
                 <h3>Local Taxis</h3>
@@ -146,25 +147,29 @@
             </div>
             <div class="faq-item">
                 <h3>Dress Code</h3>
-                <p>Formal attire. Suits and cocktail or floor-length dresses encouraged.</p>
+                <p>Formal attire. Suits and cocktail or floor-length dresses are encouraged.</p>
             </div>
             <div class="faq-item">
                 <h3>Parking</h3>
-                <p>Free parking at Hotel Kilkenny. Church parking available in Market Square area.</p>
+                <p>Free parking is available at Hotel Kilkenny. Church parking is available in the Market Square area of Bagenalstown.</p>
             </div>
         </div>
     </section>
 
     <section id="rsvp">
         <h2>RSVP</h2>
+        <p>Kindly respond by April 1st, 2026</p>
         <div class="accent"></div>
         <div class="rsvp-form">
             <form action="#" method="POST">
                 <div class="form-group"><label>Guest Names</label><input type="text" name="name" required></div>
                 <div class="form-group"><label>Attending?</label>
-                    <select name="attendance"><option value="yes">Accept</option><option value="no">Decline</option></select>
+                    <select name="attendance">
+                        <option value="yes">Joyfully Accept</option>
+                        <option value="no">Regretfully Decline</option>
+                    </select>
                 </div>
-                <div class="form-group"><label>Dietary Preferences</label><textarea name="dietary" rows="3"></textarea></div>
+                <div class="form-group"><label>Dietary Preferences</label><textarea name="dietary" rows="3" placeholder="e.g. Vegetarian, Gluten Free..."></textarea></div>
                 <button type="submit" class="btn-submit">Submit Response</button>
             </form>
         </div>
