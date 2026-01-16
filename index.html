@@ -69,7 +69,8 @@
         .form-group { margin-bottom: 20px; }
         label { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: 600; }
         input, textarea, select { width: 100%; padding: 12px; border: 1px solid #ddd; font-family: 'Inter', sans-serif; }
-        .btn-submit { width: 100%; background: var(--dark); color: white; border: none; padding: 15px; text-transform: uppercase; cursor: pointer; letter-spacing: 2px; }
+        .btn-submit { width: 100%; background: var(--dark); color: white; border: none; padding: 15px; text-transform: uppercase; cursor: pointer; letter-spacing: 2px; transition: 0.3s; }
+        .btn-submit:hover { background: var(--gold); }
 
         @media (max-width: 768px) { .card-grid, .faq-grid { grid-template-columns: 1fr; } nav { display: none; } }
     </style>
@@ -105,7 +106,7 @@
         <div class="accent"></div>
         <div class="card-grid">
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1545639140-19ac85142163?auto=format&fit=crop&w=800" alt="Traditional Stone Church Exterior">
+                <img src="https://images.unsplash.com/photo-1542042161784-26ab9e040089?auto=format&fit=crop&w=800" alt="Catholic Wedding Symbolism">
                 <h3>St Andrews Church</h3>
                 <p>Market Square, Bagenalstown, Co. Carlow</p>
                 <div class="map-container">
