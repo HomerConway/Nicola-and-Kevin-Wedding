@@ -6,10 +6,22 @@
     <title>Nicola & Kevin | 08.05.2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        :root { --gold: #b39151; --dark: #1a1a1a; --off-white: rgba(252, 251, 247, 0.95); --white: rgba(255, 255, 255, 0.95); }
+        :root { 
+            --gold: #b39151; 
+            --dark: #1a1a1a; 
+            --teal-bg: #e0f2f1; /* Light Teal Background */
+            --white-glass: rgba(255, 255, 255, 0.9);
+        }
         * { box-sizing: border-box; }
         
-        body { margin: 0; font-family: 'Inter', sans-serif; color: var(--dark); scroll-behavior: smooth; position: relative; }
+        body { 
+            margin: 0; 
+            font-family: 'Inter', sans-serif; 
+            color: var(--dark); 
+            scroll-behavior: smooth;
+            position: relative;
+            background-color: var(--teal-bg); /* Base background color */
+        }
 
         /* Custom Monogram Watermark */
         body::before {
@@ -17,11 +29,12 @@
             max-width: 500px; transform: translate(-50%, -50%);
             background-image: url('image_4a7b8a.png'); 
             background-size: contain; background-repeat: no-repeat; background-position: center;
-            opacity: 0.06; z-index: -1; pointer-events: none;
+            opacity: 0.07; z-index: -1; pointer-events: none;
         }
 
         h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 400; margin-bottom: 20px; }
-        nav { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.98); padding: 15px; z-index: 1000; border-bottom: 1px solid #eee; text-align: center; }
+        
+        nav { position: fixed; top: 0; width: 100%; background: var(--white-glass); padding: 15px; z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.05); text-align: center; }
         nav a { margin: 0 12px; text-decoration: none; color: var(--dark); font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; }
 
         header {
@@ -33,49 +46,55 @@
         .hero-names { font-size: clamp(2.5rem, 8vw, 5rem); margin: 10px 0; }
 
         section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; text-align: center; }
-        .bg-alt { background-color: var(--off-white); max-width: 100%; }
+        
+        /* Alternating section styles for depth */
+        .bg-glass { background-color: rgba(255, 255, 255, 0.4); max-width: 100%; }
+        
         .accent { width: 60px; height: 1px; background: var(--gold); margin: 25px auto; }
 
-        /* Timeline & Cards */
         .timeline { margin: 40px auto; max-width: 600px; text-align: left; }
         .event { display: flex; margin-bottom: 25px; border-left: 1px solid var(--gold); padding-left: 25px; }
         .time { min-width: 110px; font-weight: 600; color: var(--gold); }
 
         .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-        .card { background: white; padding: 25px; border: 1px solid #eee; border-radius: 4px; }
-        .card img { width: 100%; height: 180px; object-fit: cover; border-radius: 2px; margin-bottom: 15px; }
-
-        /* FAQ Styling */
-        .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; text-align: left; margin-top: 40px; }
-        .faq-item h3 { font-size: 1.1rem; color: var(--gold); margin-bottom: 10px; }
-        .faq-item p { font-size: 0.95rem; line-height: 1.6; color: #555; }
+        .card { background: white; padding: 25px; border: 1px solid rgba(0,0,0,0.05); border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
+        .card img { width: 100%; height: 220px; object-fit: cover; border-radius: 2px; margin-bottom: 15px; }
 
         .map-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 15px 0; }
-        .map-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; filter: grayscale(100%); }
+        .map-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; filter: grayscale(100%); transition: 0.5s; }
+        .map-container iframe:hover { filter: grayscale(0%); }
 
-        .taxi-card { background: white; padding: 20px; border: 1px solid #eee; margin-top: 10px; }
-        .taxi-number { display: block; color: var(--gold); font-weight: 600; text-decoration: none; margin-top: 5px; }
+        /* Original RSVP Look & Feel Restored */
+        .rsvp-form { max-width: 500px; margin: 40px auto; text-align: left; background: white; padding: 40px; border: 1px solid #eee; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: 600; }
+        input, textarea, select { 
+            width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 0; 
+            font-family: 'Inter', sans-serif; appearance: none; -webkit-appearance: none;
+        }
+        .btn-submit { 
+            width: 100%; background: var(--dark); color: white; border: none; padding: 15px; 
+            text-transform: uppercase; cursor: pointer; letter-spacing: 2px; transition: 0.3s;
+        }
+        .btn-submit:hover { background: var(--gold); }
 
-        .rsvp-form { max-width: 550px; margin: 40px auto; text-align: left; background: white; padding: 40px; border: 1px solid #eee; }
-        .btn-submit { width: 100%; background: var(--dark); color: white; border: none; padding: 16px; text-transform: uppercase; cursor: pointer; letter-spacing: 2px; }
-
-        @media (max-width: 768px) { .faq-grid, .card-grid { grid-template-columns: 1fr; } nav { display: none; } }
+        @media (max-width: 768px) { .card-grid { grid-template-columns: 1fr; } nav { display: none; } }
     </style>
 </head>
 <body>
 
     <nav>
         <a href="#schedule">Schedule</a>
-        <a href="#locations">Venues</a>
+        <a href="#venues">Venues</a>
         <a href="#accommodation">Stay</a>
-        <a href="#faq">FAQ</a>
+        <a href="#daytwo">Day Two</a>
         <a href="#rsvp">RSVP</a>
     </nav>
 
     <header>
-        <div style="letter-spacing: 5px; text-transform: uppercase;">The Wedding of</div>
+        <div style="letter-spacing: 5px; text-transform: uppercase; font-size: 0.9rem;">The Wedding of</div>
         <h1 class="hero-names">Nicola & Kevin</h1>
-        <div style="font-size: 1.3rem;">08 . 05 . 2026</div>
+        <div style="font-size: 1.3rem; letter-spacing: 2px;">08 . 05 . 2026</div>
     </header>
 
     <section id="schedule">
@@ -89,21 +108,21 @@
         </div>
     </section>
 
-    <section id="locations" class="bg-alt">
+    <section id="venues" class="bg-glass">
         <h2>The Venues</h2>
         <div class="accent"></div>
         <div class="card-grid">
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=600" alt="Hotel Kilkenny">
-                <h3>Hotel Kilkenny</h3>
-                <p>The Skyline Suite - College Rd, Kilkenny</p>
-                <div class="map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2414.288235882643!2d-7.2625!3d52.645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d590bc3d86767%3A0x4d512d44493de3cd!2sHotel%20Kilkenny!5e0!3m2!1sen!2sie!4v1700000000000" loading="lazy"></iframe></div>
+                <img src="https://images.unsplash.com/photo-1548705085-101177834f47?auto=format&fit=crop&w=800" alt="St Andrews Church Bagenalstown">
+                <h3>St Andrews Church</h3>
+                <p>Market Square, Bagenalstown, Co. Carlow</p>
+                <div class="map-container"><iframe src="https://maps.google.com/?cid=9999501765876539924&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" loading="lazy"></iframe></div>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1437719417032-8595fd9e9dc6?auto=format&fit=crop&w=600" alt="St Andrews Church">
-                <h3>St Andrews Church</h3>
-                <p>Market Square, Bagenalstown</p>
-                <div class="map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2409.0!2d-6.95!3d52.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d68!2sSt%20Andrews%20Church!5e0!3m2!1sen!2sie!4v1700000000000" loading="lazy"></iframe></div>
+                <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800" alt="Hotel Kilkenny Dinner Suite">
+                <h3>Hotel Kilkenny</h3>
+                <p>College Rd, Kilkenny City</p>
+                <div class="map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2408.814231644783!2d-7.2515!3d52.6538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d309074747475%3A0x7474747474747474!2sMatt%20The%20Millers!5e0!3m2!1sen!2sie!4v17000000000004" loading="lazy"></iframe></div>
             </div>
         </div>
     </section>
@@ -112,37 +131,19 @@
         <h2>Where to Stay</h2>
         <div class="accent"></div>
         <div class="card-grid">
-            <div class="card"><h3>Hotel Kilkenny</h3><p>056 776 2000</p></div>
-            <div class="card"><h3>Hibernian Hotel</h3><p>056 777 1888</p></div>
-            <div class="card"><h3>Kilkenny Ormonde</h3><p>056 775 0200</p></div>
-        </div>
-        <h3 style="margin-top:40px;">Local Taxis</h3>
-        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-            <div class="taxi-card">Seven Sevens<a href="tel:0567777777" class="taxi-number">056 777 7777</a></div>
-            <div class="taxi-card">Kilkenny Taxis<a href="tel:0567712345" class="taxi-number">056 771 2345</a></div>
+            <div class="card"><h3>Hotel Kilkenny</h3><p>Venue • 056 776 2000</p></div>
+            <div class="card"><h3>Hibernian Hotel</h3><p>City Center • 056 777 1888</p></div>
+            <div class="card"><h3>Kilkenny Ormonde</h3><p>Central • 056 775 0200</p></div>
         </div>
     </section>
 
-    <section id="faq" class="bg-alt">
-        <h2>Guest Information</h2>
+    <section id="daytwo" class="bg-glass">
+        <h2>Day Two: Matt The Millers</h2>
         <div class="accent"></div>
-        <div class="faq-grid">
-            <div class="faq-item">
-                <h3>What is the dress code?</h3>
-                <p>We'd love to see you in your finest formal attire. Think suits and cocktail or floor-length dresses.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Is there parking?</h3>
-                <p>Yes, there is public parking near St Andrews Church and complimentary guest parking at Hotel Kilkenny.</p>
-            </div>
-            <div class="faq-item">
-                <h3>When should I arrive?</h3>
-                <p>We recommend arriving at the church at least 15–20 minutes before the 1:00 PM ceremony starts.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Day Two Details?</h3>
-                <p>We'll be at Matt The Millers Loft Bar from 4:00 PM on Saturday for music by Jake Doyle and food. Casual dress!</p>
-            </div>
+        <p>Saturday May 9th @ 4:00 PM • The Loft Bar</p>
+        <p>Live music with <strong>Jake Doyle</strong> & Finger Food</p>
+        <div class="card" style="max-width: 600px; margin: 30px auto;">
+            <div class="map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2408.814231644783!2d-7.2515!3d52.6538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d309074747475%3A0x7474747474747474!2sMatt%20The%20Millers!5e0!3m2!1sen!2sie!4v17000000000005" loading="lazy"></iframe></div>
         </div>
     </section>
 
@@ -152,15 +153,27 @@
         <div class="accent"></div>
         <div class="rsvp-form">
             <form action="#" method="POST">
-                <div class="form-group"><label>Names</label><input type="text" name="name" required></div>
-                <div class="form-group"><label>Attending?</label><select name="attendance"><option value="yes">Accept</option><option value="no">Decline</option></select></div>
-                <div class="form-group"><label>Dietary Info</label><textarea name="dietary" rows="3"></textarea></div>
-                <button type="submit" class="btn-submit">Submit</button>
+                <div class="form-group">
+                    <label>Guest Names</label>
+                    <input type="text" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label>Attending?</label>
+                    <select name="attendance">
+                        <option value="yes">Joyfully Accept</option>
+                        <option value="no">Regretfully Decline</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Dietary Preferences</label>
+                    <textarea name="dietary" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Submit Response</button>
             </form>
         </div>
     </section>
 
-    <footer style="padding: 60px; background: var(--dark); color: white;">
+    <footer style="padding: 60px; background: var(--dark); color: white; text-align: center;">
         <p>NICOLA & KEVIN • 08.05.2026</p>
     </footer>
 
