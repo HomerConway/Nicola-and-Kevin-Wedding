@@ -39,8 +39,8 @@
 
         header {
             height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
-                        url('https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=1920&q=80');
+            background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), 
+                        url('https://images.unsplash.com/photo-1510076857177-7470076d4098?auto=format&fit=crop&w=1920&q=80');
             background-size: cover; background-position: center; color: white;
         }
         .hero-names { font-size: clamp(2.5rem, 8vw, 5rem); margin: 10px 0; }
@@ -61,18 +61,15 @@
         .map-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; filter: grayscale(100%); transition: 0.5s; }
         .map-container iframe:hover { filter: grayscale(0%); }
 
-        /* FAQ Styling */
         .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; text-align: left; margin-top: 40px; }
         .faq-item h3 { font-size: 1.1rem; color: var(--gold); margin-bottom: 10px; }
         .faq-item p { font-size: 0.95rem; line-height: 1.6; color: #555; }
 
-        /* Original RSVP Style */
         .rsvp-form { max-width: 500px; margin: 40px auto; text-align: left; background: white; padding: 40px; border: 1px solid #eee; }
         .form-group { margin-bottom: 20px; }
         label { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: 600; }
         input, textarea, select { width: 100%; padding: 12px; border: 1px solid #ddd; font-family: 'Inter', sans-serif; }
-        .btn-submit { width: 100%; background: var(--dark); color: white; border: none; padding: 15px; text-transform: uppercase; cursor: pointer; letter-spacing: 2px; transition: 0.3s; }
-        .btn-submit:hover { background: var(--gold); }
+        .btn-submit { width: 100%; background: var(--dark); color: white; border: none; padding: 15px; text-transform: uppercase; cursor: pointer; letter-spacing: 2px; }
 
         @media (max-width: 768px) { .card-grid, .faq-grid { grid-template-columns: 1fr; } nav { display: none; } }
     </style>
@@ -108,11 +105,11 @@
         <div class="accent"></div>
         <div class="card-grid">
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1545639140-19ac85142163?auto=format&fit=crop&w=800" alt="St Andrews Church Architecture">
+                <img src="https://images.unsplash.com/photo-1548705085-101177834f47?auto=format&fit=crop&w=800" alt="St Andrews Church">
                 <h3>St Andrews Church</h3>
                 <p>Market Square, Bagenalstown, Co. Carlow</p>
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2402.628834466986!2d-6.974516623321477!3d52.70377507218659!2m3!1f0!2f0!3f0!3m2!1i1024!2i1024!4f13.1!3m3!1m2!1s0x485d153833d7b901%3A0xe54b4f3b6487e41b!2sSt%20Andrew&#39;s%20Catholic%20Church!5e0!3m2!1sen!2sie!4v1705436500000!5m2!1sen!2sie" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2402.046467389814!2d-6.9610531!3d52.7027581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4842cd8c16d56d7d%3A0xc02c744f4922379!2sSt%20Andrew's%20Church%2C%20Bagenalstown!5e0!3m2!1sen!2sie!4v1705436800000" loading="lazy"></iframe>
                 </div>
             </div>
             <div class="card">
@@ -120,13 +117,29 @@
                 <h3>Hotel Kilkenny</h3>
                 <p>College Rd, Kilkenny City</p>
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2407.828620803445!2d-7.266224423325619!3d52.64500987209351!2m3!1f0!2f0!3f0!3m2!1i1024!2i1024!4f13.1!3m3!1m2!1s0x485d30909673859b%3A0xc62908003c27f308!2sHotel%20Kilkenny!5e0!3m2!1sen!2sie!4v1705436600000!5m2!1sen!2sie" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2411.08518776615!2d-7.2657791!3d52.6416556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4842b6045f096739%3A0x886105572093d56d!2sHotel%20Kilkenny!5e0!3m2!1sen!2sie!4v1705436850000" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="faq">
+    <section id="daytwo">
+        <h2>Day Two: Matt The Millers</h2>
+        <div class="accent"></div>
+        <div class="card-grid" style="justify-content: center;">
+            <div class="card" style="max-width: 600px; margin: 0 auto;">
+                <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800" alt="Matt The Millers">
+                <h3>The Loft Bar</h3>
+                <p>Saturday May 9th @ 4:00 PM</p>
+                <p>Music by <strong>Jake Doyle</strong> & Finger Food</p>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2411.1394544747753!2d-7.2514309!3d52.6534571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4842b6107380f68d%3A0x8544d642e6162391!2sMatt%20The%20Millers%20Bar%20%26%20Restaurant!5e0!3m2!1sen!2sie!4v1705436900000" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="bg-glass">
         <h2>Guest Information</h2>
         <div class="accent"></div>
         <div class="faq-grid">
@@ -143,13 +156,13 @@
                 <p>Rooms are available at Hotel Kilkenny (056 776 2000). Nearby options include the Hibernian and Ormonde Hotels.</p>
             </div>
             <div class="faq-item">
-                <h3>Day Two</h3>
-                <p>Join us at Matt The Millers Loft Bar at 4:00 PM on Saturday for music by Jake Doyle and food.</p>
+                <h3>Local Taxis</h3>
+                <p>Seven Sevens: 056 777 7777<br>Kilkenny Taxis: 056 771 2345</p>
             </div>
         </div>
     </section>
 
-    <section id="rsvp" class="bg-glass">
+    <section id="rsvp">
         <h2>RSVP</h2>
         <p>Kindly respond by April 1st, 2026</p>
         <div class="accent"></div>
