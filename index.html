@@ -39,7 +39,6 @@
         nav { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.98); padding: 15px; z-index: 1000; border-bottom: 1px solid #eee; text-align: center; }
         nav a { margin: 0 12px; text-decoration: none; color: var(--dark); font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; }
 
-        /* Elegant Floral Hero */
         header {
             height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
             background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
@@ -50,30 +49,23 @@
 
         section { padding: 100px 20px; max-width: 1100px; margin: 0 auto; text-align: center; }
         .bg-alt { background-color: var(--off-white); max-width: 100%; }
-        
         .accent { width: 60px; height: 1px; background: var(--gold); margin: 25px auto; }
-        
-        /* Subtle Floral Divider */
         .divider { font-size: 1.5rem; color: var(--gold); margin: 40px 0; opacity: 0.6; }
-
-        .timeline { margin: 40px auto; max-width: 600px; text-align: left; }
-        .event { display: flex; margin-bottom: 30px; border-left: 1px solid var(--gold); padding-left: 25px; }
-        .time { min-width: 110px; font-weight: 600; color: var(--gold); letter-spacing: 1px; }
 
         .location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
         .map-box { background: white; padding: 25px; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
-        iframe { width: 100%; height: 250px; border: 0; filter: grayscale(100%); transition: 0.5s; border-radius: 2px; }
-        iframe:hover { filter: grayscale(0%); }
+        
+        /* Map Styling */
+        .map-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-top: 15px; }
+        .map-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; filter: grayscale(100%); transition: 0.5s; }
+        .map-container iframe:hover { filter: grayscale(0%); }
 
-        .taxi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
-        .taxi-card { background: white; padding: 30px; border: 1px solid #eee; border-radius: 4px; }
-        .taxi-number { display: block; margin-top: 15px; color: var(--gold); font-weight: 600; text-decoration: none; font-size: 1.1rem; }
+        .timeline { margin: 40px auto; max-width: 600px; text-align: left; }
+        .event { display: flex; margin-bottom: 30px; border-left: 1px solid var(--gold); padding-left: 25px; }
+        .time { min-width: 110px; font-weight: 600; color: var(--gold); }
 
-        .rsvp-form { max-width: 550px; margin: 40px auto; text-align: left; background: white; padding: 50px; border: 1px solid #eee; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .form-group { margin-bottom: 25px; }
-        label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; font-weight: 600; color: #888; }
-        input, textarea, select { width: 100%; padding: 15px; border: 1px solid #e0e0e0; font-family: 'Inter'; border-radius: 2px; }
-        .btn-submit { width: 100%; background: var(--dark); color: white; border: none; padding: 18px; text-transform: uppercase; cursor: pointer; letter-spacing: 3px; font-size: 0.8rem; transition: 0.4s; }
+        .rsvp-form { max-width: 550px; margin: 40px auto; text-align: left; background: white; padding: 50px; border: 1px solid #eee; }
+        .btn-submit { width: 100%; background: var(--dark); color: white; border: none; padding: 18px; text-transform: uppercase; cursor: pointer; letter-spacing: 3px; transition: 0.4s; }
         .btn-submit:hover { background: var(--gold); }
 
         @media (max-width: 768px) { .location-grid { grid-template-columns: 1fr; } nav { display: none; } }
@@ -85,14 +77,13 @@
         <a href="#schedule">Schedule</a>
         <a href="#locations">Locations</a>
         <a href="#daytwo">Day Two</a>
-        <a href="#transport">Taxis</a>
         <a href="#rsvp">RSVP</a>
     </nav>
 
     <header>
-        <div style="letter-spacing: 5px; text-transform: uppercase; font-size: 0.9rem;">The Wedding of</div>
+        <div style="letter-spacing: 5px; text-transform: uppercase;">The Wedding of</div>
         <h1 class="hero-names">Nicola & Kevin</h1>
-        <div style="font-size: 1.3rem; letter-spacing: 2px;">08 . 05 . 2026</div>
+        <div style="font-size: 1.3rem;">08 . 05 . 2026</div>
     </header>
 
     <section id="schedule">
@@ -100,9 +91,8 @@
         <div class="accent"></div>
         <div class="timeline">
             <div class="event"><div class="time">1:00 PM</div><div><strong>Wedding Ceremony</strong><br>St Andrews Church, Bagenalstown</div></div>
-            <div class="event"><div class="time">5:00 PM</div><div><strong>Drinks Reception & Speeches</strong><br>Hotel Kilkenny</div></div>
-            <div class="event"><div class="time">7:00 PM</div><div><strong>Wedding Breakfast</strong><br>The Skyline Suite</div></div>
-            <div class="event"><div class="time">9:30 PM</div><div><strong>Evening Party</strong><br>Featuring The Electrix</div></div>
+            <div class="event"><div class="time">5:00 PM</div><div><strong>Reception</strong><br>Hotel Kilkenny</div></div>
+            <div class="event"><div class="time">9:30 PM</div><div><strong>Evening Party</strong><br>Music by The Electrix</div></div>
         </div>
     </section>
 
@@ -114,55 +104,46 @@
             <div class="map-box">
                 <h3>The Ceremony</h3>
                 <p>St Andrews Church, Bagenalstown, Co. Carlow</p>
-                <iframe src="https://www.google.com/maps/contrib/113107585308123144254/reviews"></iframe>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2402.3920786576826!2d-6.9744186!3d52.7003893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d4727ccceb45d%3A0x62c55dd05d766214!2sSt.%20Andrew's%20Church!5e0!3m2!1sen!2sie!4v1705435000000" allowfullscreen="" loading="lazy"></iframe>
+                </div>
             </div>
             <div class="map-box">
                 <h3>The Reception</h3>
-                <p>Hotel Kilkenny, College Rd, Kilkenny City</p>
-                <iframe src="https://developers.google.com/maps/documentation/embed/embedding-map0"></iframe>
+                <p>Hotel Kilkenny, College Rd, Kilkenny</p>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2411.050474681329!2d-7.2662095!3d52.6450692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d3084d8a31d67%3A0x3d51ade44cad71cd!2sHotel%20Kilkenny!5e0!3m2!1sen!2sie!4v1705435100000" allowfullscreen="" loading="lazy"></iframe>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="daytwo">
         <div class="divider">❦</div>
-        <h2>The Recovery Session</h2>
+        <h2>Day Two Recovery</h2>
         <p>Saturday May 9th @ 4:00 PM • Matt The Millers Loft Bar</p>
-        <p>Join us for finger food and live music from <strong>Jake Doyle</strong>.</p>
+        <p>Live music with <strong>Jake Doyle</strong></p>
         <div class="accent"></div>
-        <div style="max-width: 800px; margin: 40px auto;">
-            <iframe src="https://www.google.com/maps/reviews/data=!4m6!14m5!1m4!2m3!1sCi9DQUlRQUNvZENodHljRjlvT21SbVFVNTVPSEJ0ZDFoSVh6UXhOakF5Y1ZkUmRuYxAB!2m1!1s0x485d45a7cce1b45d:0x8ac55de05df66214" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <div class="map-container" style="max-width: 800px; margin: 0 auto;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2410.870503525167!2d-7.2515082!3d52.6531393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d309066497f1f%3A0xf657e2e7c37e584a!2sMatt%20The%20Millers%20Bar%20%26%20Restaurant!5e0!3m2!1sen!2sie!4v1705435200000" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
-    <section id="transport" class="bg-alt">
-        <div class="divider">❦</div>
-        <h2>Local Taxis</h2>
-        <p>We recommend booking in advance.</p>
-        <div class="accent"></div>
-        <div class="taxi-grid">
-            <div class="taxi-card"><strong>Seven Sevens</strong><a href="tel:0567777777" class="taxi-number">056 777 7777</a></div>
-            <div class="taxi-card"><strong>Kilkenny Taxis</strong><a href="tel:0567712345" class="taxi-number">056 771 2345</a></div>
-        </div>
-    </section>
-
-    <section id="rsvp">
+    <section id="rsvp" class="bg-alt">
         <h2>RSVP</h2>
-        <p>Kindly respond by the first of April.</p>
         <div class="accent"></div>
         <div class="rsvp-form">
             <form action="#" method="POST">
                 <div class="form-group"><label>Guest Names</label><input type="text" name="name" required></div>
                 <div class="form-group"><label>Attendance</label><select name="attendance"><option value="yes">Joyfully Accept</option><option value="no">Regretfully Decline</option></select></div>
-                <div class="form-group"><label>Food Preferences / Allergies</label><textarea name="dietary" rows="3"></textarea></div>
-                <button type="submit" class="btn-submit">Send Response</button>
+                <div class="form-group"><label>Dietary Preferences</label><textarea name="dietary" rows="3"></textarea></div>
+                <button type="submit" class="btn-submit">Submit Response</button>
             </form>
         </div>
     </section>
 
-    <footer style="padding: 80px 20px; background: var(--dark); color: white; position: relative;">
-        <div style="font-family: 'Playfair Display'; font-style: italic; font-size: 1.5rem; margin-bottom: 20px;">See you in Kilkenny</div>
-        <p style="letter-spacing: 3px; font-size: 0.7rem; opacity: 0.6;">NICOLA & KEVIN • 08.05.2026</p>
+    <footer style="padding: 60px; background: var(--dark); color: white;">
+        <p>NICOLA & KEVIN • 08.05.2026</p>
     </footer>
 
 </body>
