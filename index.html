@@ -26,29 +26,29 @@
         .bg-alt { background-color: var(--off-white); max-width: 100%; }
         .accent { width: 40px; height: 1px; background: var(--gold); margin: 20px auto; }
 
+        /* Timeline */
         .timeline { margin: 40px auto; max-width: 600px; text-align: left; }
         .event { display: flex; margin-bottom: 25px; border-left: 1px solid var(--gold); padding-left: 20px; }
         .time { min-width: 100px; font-weight: 600; color: var(--gold); }
 
+        /* Location Grid */
         .location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
-        .map-box { background: white; padding: 20px; border: 1px solid #eee; }
-        iframe { width: 100%; height: 250px; border: 0; filter: grayscale(100%); transition: 0.5s; }
+        .map-box { background: white; padding: 20px; border: 1px solid #eee; text-align: left; }
+        iframe { width: 100%; height: 250px; border: 0; filter: grayscale(100%); transition: 0.5s; margin-top: 15px; }
         iframe:hover { filter: grayscale(0%); }
 
-        .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 30px; }
-        .gallery img { width: 100%; height: 350px; object-fit: cover; }
+        /* Music & Venue Cards */
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .feature-card { background: white; padding: 30px; border: 1px solid #eee; }
 
-        .taxi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
-        .taxi-card { background: white; padding: 25px; border: 1px solid #eee; }
-        .taxi-number { display: block; margin-top: 10px; color: var(--gold); font-weight: 600; text-decoration: none; }
-
+        /* RSVP Form */
         .rsvp-form { max-width: 500px; margin: 40px auto; text-align: left; background: white; padding: 40px; border: 1px solid #eee; }
         .form-group { margin-bottom: 20px; }
         label { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; font-weight: 600; }
-        input, textarea, select { width: 100%; padding: 12px; border: 1px solid #ddd; }
-        .btn-submit { width: 100%; background: var(--dark); color: white; border: none; padding: 15px; text-transform: uppercase; cursor: pointer; }
+        input, textarea, select { width: 100%; padding: 12px; border: 1px solid #ddd; font-family: 'Inter'; }
+        .btn-submit { width: 100%; background: var(--dark); color: white; border: none; padding: 15px; text-transform: uppercase; cursor: pointer; letter-spacing: 2px; }
 
-        @media (max-width: 768px) { .gallery, .location-grid { grid-template-columns: 1fr; } nav { display: none; } }
+        @media (max-width: 768px) { .location-grid, .card-grid { grid-template-columns: 1fr; } nav { display: none; } }
     </style>
 </head>
 <body>
@@ -56,7 +56,7 @@
     <nav>
         <a href="#schedule">Schedule</a>
         <a href="#locations">Locations</a>
-        <a href="#venue">Skyline Room</a>
+        <a href="#music">Music</a>
         <a href="#daytwo">Day Two</a>
         <a href="#rsvp">RSVP</a>
     </nav>
@@ -77,7 +77,7 @@
             </div>
             <div class="event">
                 <div class="time">5:00 PM</div>
-                <div><strong>Drinks & Speeches</strong><br>Hotel Kilkenny</div>
+                <div><strong>Drinks Reception & Speeches</strong><br>Hotel Kilkenny Arrival</div>
             </div>
             <div class="event">
                 <div class="time">7:00 PM</div>
@@ -85,70 +85,71 @@
             </div>
             <div class="event">
                 <div class="time">9:30 PM</div>
-                <div><strong>The Electrix</strong><br>Dancing until late</div>
+                <div><strong>Party Time</strong><br>Music by The Electrix</div>
             </div>
         </div>
     </section>
 
     <section id="locations" class="bg-alt">
-        <h2>The Ceremony & Reception</h2>
+        <h2>Finding Your Way</h2>
         <div class="accent"></div>
         <div class="location-grid">
             <div class="map-box">
                 <h3>St Andrews Church</h3>
                 <p>Market Square, Bagenalstown, Co. Carlow</p>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2402.321689535859!2d-6.96160568417578!3d52.70034637984812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d4727cc6db45d%3A0x5ac55d605df66211!2sSt%20Andrew's%20Church!5e0!3m2!1sen!2sie!4v1625000000000"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2402.404229672728!2d-6.9634711!3d52.700147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d45a7ccceb45d%3A0xca8c5d605df66211!2sSt%20Andrew's%20Church!5e0!3m2!1sen!2sie!4v1700000000000"></iframe>
             </div>
             <div class="map-box">
                 <h3>Hotel Kilkenny</h3>
-                <p>College Rd, Kilkenny City</p>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2410.222306788544!2d-7.265773684180453!3d52.64687787983944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d3084d8837767%3A0x3d51ade44c3ddecd!2sHotel%20Kilkenny!5e0!3m2!1sen!2sie!4v1625000000000"></iframe>
+                <p>College Road, Kilkenny City, R95 V0DK</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2410.975458145107!2d-7.2618991!3d52.6465457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d3083d8839dee%3A0x4d51adb44c3ddecd!2sHotel%20Kilkenny!5e0!3m2!1sen!2sie!4v1700000000000"></iframe>
             </div>
         </div>
     </section>
 
-    <section id="venue">
-        <h2>The Skyline Room</h2>
-        <p>A glimpse of our celebration venue at Hotel Kilkenny.</p>
+    <section id="music">
+        <h2>The Entertainment</h2>
         <div class="accent"></div>
-        <div class="gallery">
-            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800" alt="Skyline Room 1">
-            <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=800" alt="Skyline Room 2">
+        <div class="card-grid">
+            <div class="feature-card">
+                <h3 style="color: var(--gold);">The Electrix</h3>
+                <p>We’re delighted to have <strong>The Electrix</strong> leading the party! Expect a high-energy set that covers everything from rock classics to modern floor-fillers. Bring your dancing shoes.</p>
+            </div>
+            <div class="feature-card">
+                <h3 style="color: var(--gold);">The Skyline Suite</h3>
+                <p>Located on the 4th floor of Hotel Kilkenny, the Skyline Suite offers floor-to-ceiling views of the city lights and St Canice's Cathedral—the perfect backdrop for our evening.</p>
+            </div>
         </div>
     </section>
 
     <section id="daytwo" class="bg-alt">
-        <h2>Day Two: Recovery Session</h2>
-        <p>Saturday May 9th @ 7:00 PM • Matt The Millers Loft Bar</p>
-        <p>Live music with <strong>Jake Doyle</strong> & finger food.</p>
+        <h2>Day Two: The After Party</h2>
         <div class="accent"></div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2410.0526362837335!2d-7.251412684180352!3d52.65345607984039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d30999516634b%3A0x7d28766468725832!2sMatt%20The%20Millers%20Bar%20%26%20Restaurant!5e0!3m2!1sen!2sie!4v1625000000000" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </section>
-
-    <section id="transport">
-        <h2>Local Taxis</h2>
-        <div class="accent"></div>
-        <div class="taxi-grid">
-            <div class="taxi-card"><strong>Seven Sevens</strong><a href="tel:0567777777" class="taxi-number">056 777 7777</a></div>
-            <div class="taxi-card"><strong>Kilkenny Taxis</strong><a href="tel:0567712345" class="taxi-number">056 771 2345</a></div>
+        <p><strong>Saturday May 9th @ 4:00 PM</strong></p>
+        <p>Matt The Millers Loft Bar, Kilkenny</p>
+        <div class="feature-card" style="max-width: 600px; margin: 20px auto;">
+            <h3>Music by Jake Doyle</h3>
+            <p>Relive the night before with finger food and live music from the brilliant <strong>Jake Doyle</strong>.</p>
         </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2410.669865529813!2d-7.2514309!3d52.6534591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485d30907106e88d%3A0xc3f587d55f00e964!2sMatt%20The%20Millers%20Bar%20%26%20Restaurant!5e0!3m2!1sen!2sie!4v1700000000000" width="100%" height="300" style="border:0; margin-top:20px;"></iframe>
     </section>
 
-    <section id="rsvp" class="bg-alt">
+    <section id="rsvp">
         <h2>Kindly RSVP</h2>
+        <p>Please respond by April 1st, 2026</p>
         <div class="accent"></div>
         <div class="rsvp-form">
             <form action="#" method="POST">
-                <div class="form-group"><label>Guest Names</label><input type="text" name="name" required></div>
+                <div class="form-group"><label>Full Guest Names</label><input type="text" name="name" required></div>
                 <div class="form-group"><label>Attending?</label><select name="attendance"><option value="yes">Joyfully Accept</option><option value="no">Regretfully Decline</option></select></div>
-                <div class="form-group"><label>Dietary Preferences</label><textarea name="dietary" rows="3"></textarea></div>
+                <div class="form-group"><label>Dietary Requirements</label><textarea name="dietary" rows="3"></textarea></div>
                 <button type="submit" class="btn-submit">Submit RSVP</button>
             </form>
         </div>
     </section>
 
-    <footer style="padding: 40px; background: var(--dark); color: white;">
-        <p>NICOLA & KEVIN • 08.05.2026</p>
+    <footer style="padding: 60px; background: var(--dark); color: white;">
+        <p style="letter-spacing: 3px;">NICOLA & KEVIN • 08.05.2026</p>
     </footer>
 
 </body>
